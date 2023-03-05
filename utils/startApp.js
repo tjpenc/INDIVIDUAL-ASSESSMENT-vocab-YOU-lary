@@ -1,5 +1,6 @@
 import domBuilder from '../components/domBuilder';
 import buildNavBar from '../components/navBar';
+import formEvents from '../Events/formEvents';
 import navEvents from '../Events/navEvents';
 
 const startApp = (user) => {
@@ -7,6 +8,10 @@ const startApp = (user) => {
   domBuilder(user);
   buildNavBar();
   navEvents(user);
+  formEvents(user);
+  document.querySelector('#app').addEventListener('click', (e) => {
+    console.warn(e);
+  });
 };
 
 export default startApp;

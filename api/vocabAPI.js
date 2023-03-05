@@ -14,4 +14,30 @@ const getVocabWords = (user) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-export default getVocabWords;
+const createVocabWord = (payload) => new Promise((resolve, reject) => {
+  fetch(`${url}/words.json`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+const updateVocabWord = (payload) => new Promise((resolve, reject) => {
+  fetch(`${url}/words/${payload.firebaseKey}.json`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+export { getVocabWords, createVocabWord, updateVocabWord };
