@@ -1,0 +1,41 @@
+{
+  "sUIz1esbat8": {
+    "word_name": "in",
+    "definition": "Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+    "type": "orci",
+    "firebaseKey": "sUIz1esbat8",
+    "uid": "sPvQEhnx"
+  }, 
+  
+  "4GlFstOz": {
+    "word_name": "tortor",
+    "definition": "Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+    "type": "orci",
+    "firebaseKey": "4GlFstOz",
+    "uid": "BJIxgo3"
+  }, 
+  
+  "BUzIXnoXZ": {
+    "word_name": "quam",
+    "definition": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+    "type": "sapien",
+    "firebaseKey": "BUzIXnoXZ",
+    "uid": "AeD9f0"
+  }, 
+  
+  "QnAwCl": {
+    "word_name": "lacinia",
+    "definition": "Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+    "type": "metus",
+    "firebaseKey": "QnAwCl",
+    "uid": "4Lc2r17qB2"
+  }, 
+  
+  "xvF2s3ZIjc": {
+    "word_name": "nunc",
+    "definition": "Suspendisse ornare consequat lectus.",
+    "type": "sapien",
+    "firebaseKey": "xvF2s3ZIjc",
+    "uid": "14y0h7LQ9mBZ"
+  }
+}

@@ -6,7 +6,7 @@ const startApp = (user) => {
   document.querySelector('#login-form-container').innerHTML = '';
   domBuilder(user);
   buildNavBar();
-  navEvents();
+  navEvents(user);
 };
 
 export default startApp;
