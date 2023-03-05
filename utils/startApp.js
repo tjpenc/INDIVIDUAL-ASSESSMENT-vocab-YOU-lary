@@ -1,17 +1,20 @@
+import { getVocabWords } from '../api/vocabAPI';
 import domBuilder from '../components/domBuilder';
 import buildNavBar from '../components/navBar';
+import domEvents from '../Events/domEvents';
 import formEvents from '../Events/formEvents';
 import navEvents from '../Events/navEvents';
+import showCards from '../pages/vocabCard';
 
 const startApp = (user) => {
   document.querySelector('#login-form-container').innerHTML = '';
-  domBuilder(user);
+  domBuilder();
   buildNavBar();
   navEvents(user);
   formEvents(user);
-  document.querySelector('#app').addEventListener('click', (e) => {
-    console.warn(e);
-  });
+  domEvents(user);
+
+  getVocabWords(user).then(showCards);
 };
 
 export default startApp;
