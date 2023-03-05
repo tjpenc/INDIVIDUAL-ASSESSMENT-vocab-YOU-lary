@@ -52,6 +52,18 @@ const deleteVocabWord = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getSingleVocabCard = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${url}/words/${firebaseKey}.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
 export {
-  getVocabWords, createVocabWord, updateVocabWord, deleteVocabWord
+  getVocabWords, createVocabWord, updateVocabWord, deleteVocabWord, getSingleVocabCard
 };
