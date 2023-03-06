@@ -9,6 +9,7 @@ const signIn = () => {
 
 const signOut = () => {
   clearDOM();
+  document.querySelector('#navbar').innerHTML = '';
   firebase.auth().signOut();
 };
 
