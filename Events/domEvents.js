@@ -1,4 +1,6 @@
-import { deleteVocabWord, getSingleVocabCard, getVocabWords } from '../api/vocabAPI';
+import {
+  deleteVocabWord, getSingleVocabCard, getVocabWords, filterVocabWordsByType
+} from '../api/vocabAPI';
 import showCards from '../pages/vocabCard';
 import showWordForm from '../pages/showWordForm';
 
@@ -12,9 +14,13 @@ const domEvents = (user) => {
     }
 
     if (e.target.id.includes('update-btn')) {
-      console.warn('update button clicked');
       const [, firebaseKey] = e.target.id.split('--');
       getSingleVocabCard(firebaseKey).then((card) => showWordForm(card));
+    }
+
+    if (e.target.id.includes('filter-btn')) {
+      const inputValue = document.querySelector('#filter-value').value.toLowerCase();
+      filterVocabWordsByType(user, inputValue).then(showCards);
     }
   });
 };

@@ -23,7 +23,10 @@ const createVocabWord = (payload) => new Promise((resolve, reject) => {
     body: JSON.stringify(payload),
   })
     .then((response) => response.json())
-    .then((data) => resolve(data))
+    .then((data) => {
+      console.warn(data);
+      resolve(data);
+    })
     .catch(reject);
 });
 
@@ -64,6 +67,21 @@ const getSingleVocabCard = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const filterVocabWordsByType = (user, inputValue) => new Promise((resolve, reject) => {
+  fetch(`${url}/words.json?orderBy="uid"&equalTo="${user.uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const filteredArray = Object.values(data).filter((word) => word.type.toLowerCase() === inputValue);
+      resolve(filteredArray);
+    })
+    .catch(reject);
+});
+
 export {
-  getVocabWords, createVocabWord, updateVocabWord, deleteVocabWord, getSingleVocabCard
+  getVocabWords, createVocabWord, updateVocabWord, deleteVocabWord, getSingleVocabCard, filterVocabWordsByType
 };

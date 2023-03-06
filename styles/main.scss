@@ -14,3 +14,34 @@ body {
   top: 0px;
   width: 100%;
 }
+
+#filter-buttons {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#vocab-display {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 33%;
+}
+
+#vocab-card {
+  margin: 5px 5px;
+}
+
+#form-display {
+  width: 40%;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#submit-button {
+  margin-top: 10px;
+}
