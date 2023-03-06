@@ -5,16 +5,13 @@ import {
 import showCards from '../pages/vocabCard';
 
 const formEvents = (user) => {
-  document.querySelector('#app').addEventListener('click', (e) => {
+  document.querySelector('#form-display').addEventListener('click', (e) => {
     e.preventDefault();
     if (e.target.id.includes('submit-button')) {
       const payload = submitForm(user);
       createVocabWord(payload).then(({ name }) => {
-        console.warn(`created word with ${name}`);
         const patchPayload = { firebaseKey: name };
-        console.warn(patchPayload);
         updateVocabWord(patchPayload).then(() => {
-          console.warn('updated');
           getVocabWords(user).then(showCards);
         });
       });

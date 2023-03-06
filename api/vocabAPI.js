@@ -24,7 +24,6 @@ const createVocabWord = (payload) => new Promise((resolve, reject) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.warn(data);
       resolve(data);
     })
     .catch(reject);
