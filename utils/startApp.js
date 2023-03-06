@@ -8,7 +8,6 @@ import navEvents from '../Events/navEvents';
 import showCards from '../pages/vocabCard';
 
 const startApp = (user) => {
-  document.querySelector('#login-form-container').innerHTML = '';
   domBuilder();
   filterButton();
   buildNavBar();
