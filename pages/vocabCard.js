@@ -1,12 +1,14 @@
 import renderToDOM from '../utils/renderToDom';
 import clearDOM from '../components/clearDOM';
+import filterButton from '../components/filterButton';
 
 const showCards = (wordArray) => {
   clearDOM();
+  filterButton();
   let domString = '';
   wordArray.forEach((word) => {
     domString += `
-    <div class="card" style="width: 18rem;">
+    <div class="card" id="vocab-card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">${word.word_name}</h5>
       <h6 class="card-subtitle mb-2 text-muted">${word.type}</h6>
