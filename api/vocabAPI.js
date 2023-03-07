@@ -75,7 +75,17 @@ const filterVocabWordsByType = (user, inputValue) => new Promise((resolve, rejec
   })
     .then((response) => response.json())
     .then((data) => {
-      if (inputValue !== 'all') {
+      if (inputValue === 'A-Z') {
+        const alphebetizedArray = Object.values(data).sort((a, b) => ((a.word_name.toLowerCase() > b.word_name.toLowerCase()) ? 1 : -1));
+        resolve(alphebetizedArray);
+      } else if (inputValue === 'Newest') {
+        const newestArray = Object.values(data).sort((a, b) => ((a.time_submitted > b.time_submitted) ? 1 : -1));
+        resolve(newestArray);
+      } else if (inputValue === 'Oldest') {
+        console.warn('oldest!');
+        const oldestArray = Object.values(data).sort((a, b) => ((a.time_submitted > b.time_submitted) ? -1 : 1));
+        resolve(oldestArray);
+      } else if (inputValue !== 'all') {
         const filteredArray = Object.values(data).filter((word) => word.type.toLowerCase() === inputValue);
         resolve(filteredArray);
       } else {

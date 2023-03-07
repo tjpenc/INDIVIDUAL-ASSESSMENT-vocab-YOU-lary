@@ -22,6 +22,11 @@ const domEvents = (user) => {
       const inputValue = document.querySelector('#filter-value').value.toLowerCase();
       filterVocabWordsByType(user, inputValue).then(showCards);
     }
+
+    if (e.target.id.includes('order-btn')) {
+      const inputValue = document.querySelector('#order-value').value;
+      filterVocabWordsByType(user, inputValue).then(showCards);
+    }
   });
 };
 

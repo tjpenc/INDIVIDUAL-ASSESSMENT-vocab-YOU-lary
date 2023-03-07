@@ -44,18 +44,24 @@ body {
   align-items: center;
 }
 
+#ordering {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
 #filter-buttons {
   width: 50%;
   margin-left: 1%;
 }
 
-#filter-value {
+#filter-value, #order-value {
   width: 20%;
   display: inline;
   margin-left: 20px;
 }
 
-#filter-btn {
+#filter-btn, #order-btn {
   display: inline;
   margin-left: 20px;
 }
