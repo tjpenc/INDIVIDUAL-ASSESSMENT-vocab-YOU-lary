@@ -7,11 +7,10 @@ const submitForm = (user) => {
   const payload = {
     word_name: word,
     definition: wordDefinition,
-    type: wordType,
+    type: wordType === '' ? 'None' : wordType,
     uid: user.uid,
     time_submitted: currentTime
   };
-
   return payload;
 };
 
