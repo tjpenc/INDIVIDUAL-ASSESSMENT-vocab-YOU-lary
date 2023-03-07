@@ -75,8 +75,12 @@ const filterVocabWordsByType = (user, inputValue) => new Promise((resolve, rejec
   })
     .then((response) => response.json())
     .then((data) => {
-      const filteredArray = Object.values(data).filter((word) => word.type.toLowerCase() === inputValue);
-      resolve(filteredArray);
+      if (inputValue !== 'all') {
+        const filteredArray = Object.values(data).filter((word) => word.type.toLowerCase() === inputValue);
+        resolve(filteredArray);
+      } else {
+        resolve(Object.values(data));
+      }
     })
     .catch(reject);
 });
