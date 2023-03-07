@@ -62,16 +62,24 @@ body {
 
 #vocab-display {
   width: 90%;
+  margin-top: -50px;
   margin-left: auto;
   margin-right: auto;
-  justify-content: space-around;
   display: flex;
   flex-wrap: wrap;
-  flex-basis: 33%;
+  flex-basis: 25%;
+  justify-content: center;
+  row-gap: 10px;
 }
 
 #vocab-card {
-  margin: 5px 5px;
+  margin: 0 2%;
+}
+
+#card-category {
+  margin: 2px 0;
+  padding: 2px 0;
+  background-color: black;
 }
 
 #form-display {
