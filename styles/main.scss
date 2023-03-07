@@ -23,7 +23,19 @@ body {
   position: absolute;
   top: 0px;
   width: 100%;
-  height: 0px;
+}
+
+#logout-button {
+  position: fixed;
+  right: 50px;
+}
+
+#google-login-auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: medium;
+  height: 25px;
 }
 
 #filter-buttons {
