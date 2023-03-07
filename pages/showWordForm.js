@@ -4,7 +4,7 @@ import renderToDOM from '../utils/renderToDom';
 const showWordForm = (word = {}) => {
   clearDOM();
   const domString = `
-  <form id="submit-word" class="mb-4">
+  <form id="${word.firebaseKey ? `update-word--${word.firebaseKey}` : 'submit-word'}" class="mb-4">
     <div class="form-group" id="form-group">
       <label for="title">Word</label>
       <input type="text" class="form-control" id="title" aria-describedby="bookTitle" placeholder="Enter Word Here" value="${word.word_name || ''}" required>
@@ -22,7 +22,7 @@ const showWordForm = (word = {}) => {
         <option value="misc">miscellaneous</option>
       </select>
     </div>
-    <button type="submit" class="btn btn-primary" id="${word.firebaseKey ? `update-word--${word.firebaseKey}` : 'submit-button'}">Submit Word
+    <button type="submit" class="btn btn-primary" id="submit-button">Submit Word
     </button>
   </form>`;
   renderToDOM(domString, '#form-display');

@@ -5,9 +5,10 @@ import {
 import showCards from '../pages/vocabCard';
 
 const formEvents = (user) => {
-  document.querySelector('#form-display').addEventListener('click', (e) => {
+  document.querySelector('#form-display').addEventListener('submit', (e) => {
     e.preventDefault();
-    if (e.target.id.includes('submit-button')) {
+    console.warn(e.target.id);
+    if (e.target.id.includes('submit-word')) {
       const payload = submitForm(user);
       createVocabWord(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
