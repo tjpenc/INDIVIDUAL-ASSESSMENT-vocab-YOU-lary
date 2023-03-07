@@ -1,15 +1,20 @@
 import renderToDOM from '../utils/renderToDom';
 
 const filterButton = () => {
-  const domString = `<div>
-  <label for="filter-value">Select a Category</label>
+  const domString = `<div id="filtering">
+  <label for="filter-value">Filter by Category</label>
   <select class="form-control" id="filter-value" required>
-    <option value="">Select an option</option>
-    <option value="animal">animal</option>
-    <option value="weird">weird</option>
-    <option value="misc">miscellaneous</option>
+    <option value="">Category</option>
+    <option value="all">All</option>
+    <option value="animal">Animal</option>
+    <option value="weird">Weird</option>
+    <option value="misc">Miscellaneous</option>
   </select>
-</div><button type="button" class="btn btn-primary" id="filter-btn">Filter by Type</button>`;
+  <span id="filter-btn-div">
+  <button type="button" class="btn btn-primary" id="filter-btn">Filter!</button>
+  </span>
+</div>
+`;
   renderToDOM(domString, '#filter-buttons');
 };
 

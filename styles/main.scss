@@ -9,30 +9,77 @@ body {
   margin-top: 100px;
 }
 
+#welcome-page {
+  position: fixed;
+  left: 30%;
+  top: 30%;
+}
+
+#google-auth {
+  margin-top: 30px;
+}
+
 #navbar {
   position: absolute;
   top: 0px;
   width: 100%;
 }
 
+#logout-button {
+  position: fixed;
+  right: 50px;
+}
+
+#google-login-auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: medium;
+  height: 25px;
+}
+
+#filtering {
+  display: flex;
+  margin-top: -30px;
+  align-items: center;
+}
+
 #filter-buttons {
   width: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 1%;
+}
+
+#filter-value {
+  width: 20%;
+  display: inline;
+  margin-left: 20px;
+}
+
+#filter-btn {
+  display: inline;
+  margin-left: 20px;
 }
 
 #vocab-display {
   width: 90%;
+  margin-top: -50px;
   margin-left: auto;
   margin-right: auto;
-  justify-content: space-around;
   display: flex;
   flex-wrap: wrap;
-  flex-basis: 33%;
+  flex-basis: 25%;
+  justify-content: center;
+  row-gap: 10px;
 }
 
 #vocab-card {
-  margin: 5px 5px;
+  margin: 0 2%;
+}
+
+#card-category {
+  margin: 2px 0;
+  padding: 2px 0;
+  background-color: black;
 }
 
 #form-display {
@@ -40,6 +87,10 @@ body {
   margin-top: 10%;
   margin-left: auto;
   margin-right: auto;
+}
+
+#form-group {
+  margin: 20px 0;
 }
 
 #submit-button {

@@ -2,6 +2,9 @@
 
 In this student assessment, you will be creating an application that allows users to CRUD vocabulary cards, authenticate with Google, and filter.
 
+vocab-YOU-lary
+This project is a CRUD app that allows users to create, view, update, and delete their own set of vocabulary cards. Cards are viewed by user, so different users can login and personalize their own cards
+
 ## Learning Objectives
 - Single Responsibility Principle (each component/function should have one job)
 - Import/Export modules
@@ -63,7 +66,7 @@ Create issue tickets from the items below to help you get started.
   - [ ] Language/Tech
   - [ ] Time submitted - Not on form. Handle in your JS
   - [ ] user ID - Not on form. Pull from User object.
-- [ ] READ THIER entries
+- [ ] READ THEIR entries
 - [ ] UPDATE THEIR entries
 - [ ] DELETE THEIR entries
 - [ ] Filter by language/tech

@@ -19,7 +19,7 @@ const buildNavBar = () => {
             <li class="nav-item">
               <a class="nav-link" href="#" id="create-word">Create a Word</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ml-auto">
             <span class="nav-link" id="logout-button"></span>
             </li>
           </ul>

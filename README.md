@@ -1,3 +1,26 @@
+vocab-YOU-lary
+
+A CRUD app that allows a user to create and modify their own vocabulary cards
+
+Wireframe/Figma: https://www.figma.com/file/PwIC3oi5BWd3tDMdjqvcEr/vocab-you-lary?node-id=1%3A2&t=VuPnYQp5sthCRsmV-0
+
+As a developer it is important to understand API calls to access information from external databases. This allows a developer to create apps with information otherwise inaccessible
+
+Data Structure:
+
+Features:
+    Login/Logout buttons
+    Navbar to move between a page to view cards, and a page to create new vocab cards
+    Create a vocab card with a name, definition, and a pre-determined category
+    Update existing vocab cards
+    Delete existing vocab cards
+    View all vocab cards a user has created
+    All cards are stored in a firebase database
+
+Screenshots:
+
+Contributors: Thomas Pencarinha
+
 # Q2 - Individual Assessment: Vocab-YOU-lary
 
 [VIEW PROJECT INSTRUCTIONS](./PROJECT_INSTRUCTIONS.MD)
