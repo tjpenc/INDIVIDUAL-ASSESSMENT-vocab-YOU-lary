@@ -38,10 +38,26 @@ body {
   height: 25px;
 }
 
+#filtering {
+  display: flex;
+  margin-top: -30px;
+  align-items: center;
+}
+
 #filter-buttons {
   width: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 1%;
+}
+
+#filter-value {
+  width: 20%;
+  display: inline;
+  margin-left: 20px;
+}
+
+#filter-btn {
+  display: inline;
+  margin-left: 20px;
 }
 
 #vocab-display {
