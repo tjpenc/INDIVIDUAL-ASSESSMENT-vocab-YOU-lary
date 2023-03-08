@@ -2,12 +2,13 @@ import client from '../utils/client';
 
 const url = client.databaseURL;
 
-const getVocabWords = (user) => new Promise((resolve, reject) => {
-  fetch(`${url}/words.json?orderBy="uid"&equalTo="${user.uid}"`, {
+const getVocabWords = (uid) => new Promise((resolve, reject) => {
+  fetch(`${url}/words.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-    },
+      'Cache-Control': 'no-cache'
+    }
   })
     .then((response) => response.json())
     .then((data) => resolve(Object.values(data)))
@@ -43,11 +44,12 @@ const updateVocabWord = (payload) => new Promise((resolve, reject) => {
 });
 
 const deleteVocabWord = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${url}/words/${firebaseKey}.json`, {
+  fetch(`${url}/words/${firebaseKey}.json?`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
-    },
+      'Cache-Control': 'no-cache'
+    }
   })
     .then((response) => response.json())
     .then((data) => resolve(data))
@@ -66,8 +68,8 @@ const getSingleVocabCard = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const filterVocabWordsByType = (user, inputValue) => new Promise((resolve, reject) => {
-  fetch(`${url}/words.json?orderBy="uid"&equalTo="${user.uid}"`, {
+const filterVocabWordsByType = (uid, inputValue) => new Promise((resolve, reject) => {
+  fetch(`${url}/words.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

@@ -15,6 +15,10 @@ const showCards = (wordArray) => {
       <p class="card-text">${word.definition}</p>
       <a href="#" class="card-link" id="update-btn--${word.firebaseKey}">Update</a>
       <a href="#" class="card-link" id="delete-word--${word.firebaseKey}">Delete</a>
+      <div id="user-info-div">
+        <h6 style="font-size: 10px">Timestamp: ${word.time_submitted}</h6>
+        <h6 style="font-size: 10px">User ID: ${word.uid}</h6>
+      </div>
     </div>
   </div>`;
   });

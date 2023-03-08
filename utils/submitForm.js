@@ -1,4 +1,4 @@
-const submitForm = (user) => {
+const submitForm = (userUid) => {
   const word = document.querySelector('#title').value;
   const wordDefinition = document.querySelector('#definition').value;
   const wordType = document.querySelector('#word-type').value;
@@ -8,7 +8,7 @@ const submitForm = (user) => {
     word_name: word,
     definition: wordDefinition,
     type: wordType,
-    uid: user.uid,
+    uid: userUid,
     time_submitted: currentTime
   };
   return payload;

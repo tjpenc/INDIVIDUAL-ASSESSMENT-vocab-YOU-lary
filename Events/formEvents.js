@@ -6,26 +6,26 @@ import showCards from '../pages/vocabCard';
 import clearDOM from '../components/clearDOM';
 import renderToDOM from '../utils/renderToDom';
 
-const formEvents = (user) => {
+const formEvents = (uid) => {
   document.querySelector('#form-display').addEventListener('submit', (e) => {
     e.preventDefault();
     if (e.target.id.includes('submit-word')) {
-      const payload = submitForm(user);
+      const payload = submitForm(uid);
       createVocabWord(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateVocabWord(patchPayload).then(() => {
-          getVocabWords(user).then(showCards);
+          getVocabWords(uid).then(showCards);
         });
       });
     }
 
     if (e.target.id.includes('update-word')) {
       const [, firebaseKey] = e.target.id.split('--');
-      const payload = submitForm(user);
+      const payload = submitForm(uid);
       payload.firebaseKey = firebaseKey;
       getSingleVocabCard(firebaseKey).then(() => {
         updateVocabWord(payload).then(() => {
-          getVocabWords(user).then(showCards);
+          getVocabWords(uid).then(showCards);
         });
       });
     }
