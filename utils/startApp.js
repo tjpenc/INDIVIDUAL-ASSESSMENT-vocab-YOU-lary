@@ -1,6 +1,7 @@
 import { getVocabWords } from '../api/vocabAPI';
 import domBuilder from '../components/domBuilder';
 import filterButton from '../components/filterButton';
+import logoutButton from '../components/logoutButton';
 import buildNavBar from '../components/navBar';
 import domEvents from '../Events/domEvents';
 import formEvents from '../Events/formEvents';
@@ -11,11 +12,12 @@ const startApp = (user) => {
   domBuilder();
   filterButton();
   buildNavBar();
-  navEvents(user);
-  formEvents(user);
-  domEvents(user);
+  logoutButton();
+  navEvents(user.uid);
+  formEvents(user.uid);
+  domEvents(user.uid);
 
-  getVocabWords(user).then(showCards);
+  getVocabWords(user.uid).then(showCards);
 };
 
 export default startApp;

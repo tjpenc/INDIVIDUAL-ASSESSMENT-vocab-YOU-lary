@@ -4,12 +4,13 @@ import {
 import showCards from '../pages/vocabCard';
 import showWordForm from '../pages/showWordForm';
 
-const domEvents = (user) => {
+const domEvents = (uid) => {
   document.querySelector('#app').addEventListener('click', (e) => {
     if (e.target.id.includes('delete-word')) {
       const [, firebaseKey] = e.target.id.split('--');
       deleteVocabWord(firebaseKey).then(() => {
-        getVocabWords(user).then(showCards);
+        console.warn(uid);
+        getVocabWords(uid).then(showCards);
       });
     }
 
@@ -20,12 +21,12 @@ const domEvents = (user) => {
 
     if (e.target.id.includes('filter-btn')) {
       const inputValue = document.querySelector('#filter-value').value.toLowerCase();
-      filterVocabWordsByType(user, inputValue).then(showCards);
+      filterVocabWordsByType(uid, inputValue).then(showCards);
     }
 
     if (e.target.id.includes('order-btn')) {
       const inputValue = document.querySelector('#order-value').value;
-      filterVocabWordsByType(user, inputValue).then(showCards);
+      filterVocabWordsByType(uid, inputValue).then(showCards);
     }
   });
 };
