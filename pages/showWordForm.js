@@ -17,13 +17,14 @@ const showWordForm = (word = {}) => {
       <label for="word-type">Select a Category</label>
       <select class="form-control" id="word-type" required>
         <option value="">Select an option</option>
-        <option value="animal">animal</option>
-        <option value="weird">weird</option>
-        <option value="misc">miscellaneous</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
       </select>
     </div>
     <button type="submit" class="btn btn-primary" id="submit-button">Submit Word
     </button>
+    <a id="add-a-category" href="#">Add a Category</a>
   </form>`;
   renderToDOM(domString, '#form-display');
 };

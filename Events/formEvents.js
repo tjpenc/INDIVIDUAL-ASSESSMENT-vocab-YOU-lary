@@ -3,11 +3,12 @@ import {
   createVocabWord, updateVocabWord, getVocabWords, getSingleVocabCard
 } from '../api/vocabAPI';
 import showCards from '../pages/vocabCard';
+import clearDOM from '../components/clearDOM';
+import renderToDOM from '../utils/renderToDom';
 
 const formEvents = (user) => {
   document.querySelector('#form-display').addEventListener('submit', (e) => {
     e.preventDefault();
-    console.warn(e.target.id);
     if (e.target.id.includes('submit-word')) {
       const payload = submitForm(user);
       createVocabWord(payload).then(({ name }) => {
@@ -27,6 +28,26 @@ const formEvents = (user) => {
           getVocabWords(user).then(showCards);
         });
       });
+    }
+  });
+
+  document.querySelector('#form-display').addEventListener('click', (e) => {
+    if (e.target.id.includes('add-a-category')) {
+      clearDOM();
+      const domString = `
+      <div id="add-category-div>
+        <label for="new-category">New Category</label>
+        <input id="new-category">
+        <button id="new-category-btn">Add!</button>
+      </div>
+      `;
+
+      renderToDOM(domString, '#form-display');
+    }
+
+    if (e.target.id.includes('new-category-btn')) {
+      const inputValue = document.querySelector('#new-category').value.toLowerCase();
+      console.warn(inputValue);
     }
   });
 };
